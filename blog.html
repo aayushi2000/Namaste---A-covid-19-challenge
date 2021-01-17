@@ -1,0 +1,154 @@
+<html>
+<head>
+
+    <!-- <link rel="stylesheet" href="advisory.css" />  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+          <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+        	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+        	<link rel="stylesheet" href="css/nice-select.css"/>
+        	<link rel="stylesheet" href="css/magnific-popup.css"/>
+        	<link rel="stylesheet" href="css/slicknav.min.css"/>
+        	<link rel="stylesheet" href="css/animate.css"/>
+
+        	<!-- Main Stylesheets -->
+        	<link rel="stylesheet" href="css/style.css"/>
+          <script src="app.js"></script>
+          <!-- <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
+          <link rel="stylesheet" href="../css/book.css"> -->
+
+    <title>Document</title>
+    <style>
+      .con{
+        width: 25%;
+        height: 25%;
+        	background: linear-gradient(145deg, #f1f3f8 40%, #8d93ab 100%);
+        padding: 10px;
+        border-radius: 0.2em;
+        margin: 30px auto;
+
+      }
+      .mail{
+        margin-top: 20px;
+      }
+    </style>
+
+</head>
+
+<body style="background:#f6f6f6;">
+  <div class="d-flex justify-content-center">
+      <div class="spinner-border"
+           role="status" id="loading">
+          <span class="sr-only">Loading...</span>
+      </div>
+  </div>
+
+  <header class="header-section">
+
+    <div class="header-bottom">
+
+      <!-- <div class="hb-right">
+        <div class="hb-switch" id="search-switch">
+          <img src="img/icons/search.png" alt="">
+        </div>
+        <div class="hb-switch" id="infor-switch">
+          <img src="img/icons/bars.png" alt="">
+        </div>
+      </div> -->
+      <div class="container">
+        <a href="index.html" class="site-logo">
+          <img src="img/logo.png" class="main-logo" alt="">
+        </a>
+        <ul class="main-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">General Awareness</a></li>
+          <li><a href="contact_and_helpline\contact_helpline.html">Helpline</a>
+
+          </li>
+          <li><a href="Notifications_Advisory\advisory.html">Notification</a>
+          </li>
+          <li><a href="">Beds</a>
+            <ul class="sub-menu">
+              <li><a href="hospital_dashboard\beds.html">Hospital</a></li>
+              <li><a href="Hospital_Dashboard2\hospitalbeds.html">Medical Colleges</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Graphs</a>
+            <!-- <ul class="sub-menu">
+              <li><a href="blog.html"></a></li>
+              <li><a href="single-blog.html"></a></li>
+            </ul> -->
+          </li>
+
+
+      </div>
+    </div>
+  </header>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<img src="hi.png" class="email-image">
+<div class="con">
+<div class="mail"><b >Enter your e-mail:</b> <input type="text" value="your mail id" id="reciever"> <br></br></div>
+<label for="chart"><b>Choose a chart:</b></label>
+
+<select name="cars" id="chart">
+  <option value="dhmr">Deceased vs Hospitalised vs Migrated vs Recovered</option>
+  <option value="state">Patient vs State</option>
+  <option value="age">Age vs Patient</option>
+  <option value="dp">Date vs Patient</option>
+  <option value="gp">Gender vs Patient</option>
+</select><br></br>
+<center><input type="button" style="margin-top:10px;" value="Send Email" onclick="sendEmail()"></center>
+</div>
+</body>
+</html>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+function sendEmail()
+{
+  var email = document.getElementById("reciever").value
+  var graph = document.getElementById("chart").value
+  if(graph=="dhmr")
+  {
+    n="status_vs_n.jpeg";
+    p="https://drive.google.com/file/d/18dzx2ycrziFUyiq0Bs-Ip7G5SmjRDcgE/view?usp=sharing";
+  }
+  else if(graph=="state")
+  {
+    n="state_vs_n.jpeg";
+    p="https://drive.google.com/file/d/10MAoYqUJiVWQ4gReRZEVUweTRM0x7yha/view?usp=sharing";
+  }
+  else if(graph=="age")
+  {
+    n="a_vs_n.jpeg";
+    p="https://drive.google.com/file/d/1pHLg3-0xE6mbG9HM2N0HFe0KnIUnEeb7/view?usp=sharing";
+  }
+  else if(graph=="dp")
+  {
+    n="d_vs_n.jpeg";
+    p="https://drive.google.com/file/d/12UgC2bMVXZ7HQA4mxLaykcHPUAhXXlv0/view?usp=sharing";
+  }
+  else if(graph=="gp")
+  {
+    n="g_vs_n.jpeg";
+    p="https://drive.google.com/file/d/1gmjZv5sGsCUymcOuvPAwbw9tB5YcR1V3/view?usp=sharing";
+  }
+  Email.send({
+    SecureToken : "5844fc02-14a6-4803-93ea-30b7a93cd0f2",
+    To : email,
+    From : "vithack.crisis@gmail.com",
+    Subject : "Your Requested Document",
+    Body : "Regards from AAYUSHI, KAUSTUBH and PRERNA",
+    Attachments : [
+     {
+      name : n,
+      path: p
+     }]
+}).then(
+  message => alert(message)
+);
+}
+</script>
+</body>
